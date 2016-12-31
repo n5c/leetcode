@@ -83,9 +83,27 @@ void tc_0(void)
 	printf("%s\n\n", wordPattern(pattern, str) ? "true" : "false");
 }
 
+void tc_1(void)
+{
+	char pattern[] = "abba";
+	char str[] = "dog cat";
+	printf("false\n");
+	printf("%s\n\n", wordPattern(pattern, str) ? "true" : "false");
+}
+
+void tc_2(void)
+{
+	char pattern[] = "ab";
+	char str[] = "dog cat cat dog";
+	printf("false\n");
+	printf("%s\n\n", wordPattern(pattern, str) ? "true" : "false");
+}
+
 int main(int argc, char *argv[])
 {
 	tc_0();
+	tc_1();
+	tc_2();
 	return 0;
 }
 

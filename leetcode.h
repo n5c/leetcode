@@ -3,6 +3,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <limits.h>
+#include <math.h>
 
 #ifndef LEETCODE_H
 #define LEETCODE_H

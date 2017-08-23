@@ -72,6 +72,27 @@ int maxArea2(int* height, int heightSize)
 	return max;
 }
 
+int maxArea3(int* height, int heightSize)
+{
+	int *i, *j, h, area, max;
+
+	for (i = &height[0], j = &height[heightSize - 1], max = 0; i < j;) {
+		if (*i <= *j){
+			h = *i;
+			area = (j - i) * h;
+			while (++i < j && *i < h);
+		} else {
+			h = *j;
+			area = (j - i) * h;
+			while (i < --j && *j < h);
+		}
+		if (area > max)
+			max = area;
+	}
+
+	return max;
+}
+
 void tc_0()
 {
 	int height[] = {4,1,2,3,4,5,1,2,3,4};

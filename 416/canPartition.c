@@ -15,7 +15,6 @@ static bool helper(int *nums, int numsSize, int target)
 			return true;
 	}
 	return false;
-
 }
 
 static int cmp(const void *a, const void *b)
@@ -25,13 +24,13 @@ static int cmp(const void *a, const void *b)
 
 bool canPartition(int* nums, int numsSize)
 {
-	qsort(nums, numsSize, sizeof(*nums), cmp);
 	int i, j, target;
 	for (i = 0, target = 0; i < numsSize; ++i)
 		target += nums[i];
 	if (target & 1)
 		return false;
 	target >>= 1;
+	qsort(nums, numsSize, sizeof(*nums), cmp);
 	return helper(nums, numsSize, target);
 }
 
